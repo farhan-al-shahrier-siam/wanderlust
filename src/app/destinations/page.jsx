@@ -6,7 +6,7 @@ const DestinationsPage = async () => {
     const res = await fetch("http://localhost:8000/destinations");
     const destinations = await res.json()
 
-    console.log(destinations);
+    // console.log(destinations);
 
     return (
         <div className='container mx-auto p-10' >
