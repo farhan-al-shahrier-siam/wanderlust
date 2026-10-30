@@ -12,4 +12,35 @@ export const auth = betterAuth({
   emailAndPassword:{
     enabled: true,
   },
+  socialProviders: {
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }
+  },
+
+  account: {
+        accountLinking: {
+            enabled: true,
+            trustedProviders: ["google",], // add trusted providers
+        },
+    },
+
+
+  databaseHooks: {
+        user: {
+            create: {
+                before: async (user) => {
+                    return {
+                        data: {
+                            ...user,
+                            emailVerified: true,
+                        },
+                    };
+                },
+            },
+        },
+    },
+
+
 });

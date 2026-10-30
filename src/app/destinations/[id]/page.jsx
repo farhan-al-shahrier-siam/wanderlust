@@ -1,3 +1,4 @@
+import BookingCard from "@/components/BookingCard";
 import DeleteDestination from "@/components/DeleteDestination";
 import EditModal from "@/components/EditModal";
 import { Button } from "@heroui/react";
@@ -35,7 +36,7 @@ const DestinationDetailsPage = async ({ params }) => {
                         </div>
                     </div>
                     <div>
-                        <h3 className="text-2xl font-bold">${price}</h3>
+                       <BookingCard destination={destination} ></BookingCard>
                     </div>
                 </div>
             </div>
