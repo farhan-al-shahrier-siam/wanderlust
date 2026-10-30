@@ -1,7 +1,5 @@
-const dns = require("node:dns");
-dns.setServers(["8.8.8.8", "8.8.4.4"]);
-
 "use client";
+
 import { Button, FieldError, Input, Label, ListBox, TextArea, TextField, Select } from "@heroui/react";
 import { redirect } from "next/navigation";
 import React from "react";
