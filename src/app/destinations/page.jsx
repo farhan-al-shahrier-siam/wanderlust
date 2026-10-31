@@ -4,15 +4,8 @@ import { headers } from "next/headers";
 import React from "react";
 
 const DestinationsPage = async () => {
-    const { token } = await auth.api.getToken({
-        headers: await headers(),
-    });
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destinations`, {
-        headers: {
-            authorization: `Bearer ${token}`,
-        },
-    });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destinations`);
     const destinations = await res.json();
 
     // console.log(destinations);
